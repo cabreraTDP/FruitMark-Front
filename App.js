@@ -1,29 +1,19 @@
-import { StatusBar } from 'expo-status-bar';
-import { useEffect } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { Get } from './src/utils/axiosUtils';
+import { NavigationContainer } from '@react-navigation/native';
+import { Provider } from 'react-redux';
+import MainFrame from './MainFrame';
+import { getInitialData } from './src/redux/actions/store_actions';
+import store from './src/redux/store'
+import { navigationRef } from './src/RootNavigation';
 
 export default function App() {
-  useEffect(() => {
-    const request = async() =>{
-      const resp = await Get('/stores/');
-      console.log(resp)
-    }
-    request();
-  }, [])
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer ref={navigationRef} theme={{colors: {background:'transparent'}}}>
+
+    <Provider store={store}>
+      <MainFrame />
+    </Provider>
+    </NavigationContainer>
+    
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

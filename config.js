@@ -1,4 +1,4 @@
 const config = {
-    URL : 'http://localhost:7799'
+    URL : 'https://fruitmarker-server.herokuapp.com'
 }
 export default config;

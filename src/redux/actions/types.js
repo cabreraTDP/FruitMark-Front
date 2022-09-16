@@ -1,1 +1,9 @@
 export const AUTH_LOGIN = "AUTH_LOGIN";
+export const GET_STORES = "GET_STORES";
+export const GET_ALL_STORES = "GET_ALL_STORES";
+export const SET_LIST_STORES = "SET_LIST_STORES";
+export const SET_AVAILABLE_STORES = "SET_AVAILABLE_STORES";
+export const SET_SOURCE = "SET_SOURCE";
+export const SET_TARGET = "SET_TARGET";
+export const STORE_TRANSFER = "STORE_TRANSFER";
+

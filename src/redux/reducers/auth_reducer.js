@@ -11,7 +11,7 @@ export default (state = initialState, action) => {
         case AUTH_LOGIN:
             return {
                 ...state,
-                isSignedIn: payload.isSignedIn,
+                isSignedIn: true,
                 token: payload.token
             };
         default:
